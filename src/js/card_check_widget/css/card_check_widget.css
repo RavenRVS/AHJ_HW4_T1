@@ -1,0 +1,74 @@
+.card-check-widget {
+    width: 300px;
+    height: 192px;
+    border: 2px solid grey;
+    border-radius: 10px;
+}
+
+h3 {
+    margin-left: 10px;
+}
+
+.cards {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    height: 25px
+}
+
+.cards li {
+    display: block;
+    float: left
+}
+
+.card {
+    float: left;
+    width: 39px;
+    height: 25px;
+    text-indent: -9999px;
+    background-position: 0 0;
+    margin-right: 4px;
+    background-size: 100%;
+}
+
+form {
+    margin-left: 10px;
+    margin-top: 30px;
+}
+
+#submitform {
+    margin-left: 10px
+}
+
+.card.cdisabled {
+    background-position: 0 -25px;
+    opacity: .6;
+}
+
+.card.visa {
+    background-image: url("../img/card-visa.png");
+}
+
+.card.amex {
+    background-image: url("../img/card-amex.png")
+}
+
+.card.mir {
+    background-image: url("../img/card-mir.png")
+}
+
+.card.master {
+    background-image: url("../img/card-mastercard.png")
+}
+
+.card.discover {
+    background-image: url("../img/card-discover.png")
+}
+
+.valid {
+    color: green;
+}
+
+.novalid {
+    color: red;
+}
