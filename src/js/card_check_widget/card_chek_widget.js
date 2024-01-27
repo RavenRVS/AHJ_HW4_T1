@@ -1,11 +1,12 @@
-import creditCardType from "./credit_card_type";
-import lunhCheck from "./lunh_check";
+/* eslint-disable no-underscore-dangle */
+import creditCardType from './credit_card_type';
+import lunhCheck from './lunh_check';
 // eslint-disable-next-line no-unused-vars
-import style from "./css/card_check_widget.css";
+import style from './css/card_check_widget.css';
 
 export default class CardCheckWidget {
   constructor(container) {
-    if (typeof container === "string") {
+    if (typeof container === 'string') {
       document.querySelector(container);
     }
 
@@ -37,44 +38,44 @@ export default class CardCheckWidget {
   }
 
   static get selectorForm() {
-    return ".form-inline";
+    return '.form-inline';
   }
 
   static get selectorInput() {
-    return ".form-input";
+    return '.form-input';
   }
 
   static get selectorCard() {
-    return ".card";
+    return '.card';
   }
 
   bindToDOM() {
     this.container.innerHTML = CardCheckWidget.widgetElements;
 
     this.cardsList = this.container.querySelectorAll(
-      CardCheckWidget.selectorCard
+      CardCheckWidget.selectorCard,
     );
     this.form = this.container.querySelector(CardCheckWidget.selectorForm);
     this.input = this.form.querySelector(CardCheckWidget.selectorInput);
 
-    this.input.addEventListener("input", this._checkTypeCard);
-    this.form.addEventListener("submit", this._isValid);
+    this.input.addEventListener('input', this._checkTypeCard);
+    this.form.addEventListener('submit', this._isValid);
   }
 
   _checkTypeCard() {
-    let cardType = creditCardType(this.input.value);
-    this.input.classList.remove("valid", "novalid");
+    const cardType = creditCardType(this.input.value);
+    this.input.classList.remove('valid', 'novalid');
     if (cardType) {
-      let card = this.container.querySelector(`.${cardType}`);
+      const card = this.container.querySelector(`.${cardType}`);
       this.cardsList.forEach((el) => {
         if (el === card) {
           return;
         }
-        el.classList.add("cdisabled");
+        el.classList.add('cdisabled');
       });
     } else {
       this.cardsList.forEach((el) => {
-        el.classList.remove("cdisabled");
+        el.classList.remove('cdisabled');
       });
     }
   }
@@ -86,11 +87,11 @@ export default class CardCheckWidget {
       result = true;
     }
     if (result) {
-      this.input.classList.add("valid");
-      this.input.classList.remove("novalid");
+      this.input.classList.add('valid');
+      this.input.classList.remove('novalid');
     } else {
-      this.input.classList.add("novalid");
-      this.input.classList.remove("valid");
+      this.input.classList.add('novalid');
+      this.input.classList.remove('valid');
     }
   }
 }

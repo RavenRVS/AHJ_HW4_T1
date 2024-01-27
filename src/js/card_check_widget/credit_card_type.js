@@ -1,24 +1,25 @@
+/* eslint-disable prefer-regex-literals */
 export default function creditCardType(cc) {
-  let amex = new RegExp("^3[47]");
-  let visa = new RegExp("^4");
-  let mastercard = new RegExp("^5[1-5]");
-  let disco = new RegExp("^6[0245]");
-  let mir = new RegExp("^220[0-4]");
+  const amex = new RegExp('^3[47]');
+  const visa = new RegExp('^4');
+  const mastercard = new RegExp('^5[1-5]');
+  const disco = new RegExp('^6[0245]');
+  const mir = new RegExp('^220[0-4]');
 
   if (visa.test(cc)) {
-    return "visa";
+    return 'visa';
   }
   if (amex.test(cc)) {
-    return "amex";
+    return 'amex';
   }
   if (mastercard.test(cc)) {
-    return "master";
+    return 'master';
   }
   if (disco.test(cc)) {
-    return "discover";
+    return 'discover';
   }
   if (mir.test(cc)) {
-    return "mir";
+    return 'mir';
   }
   return false;
 }
